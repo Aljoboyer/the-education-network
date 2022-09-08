@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+
+.login_btn{
+    background-color: white;
+    border: 1px solid #27a9e1;
+    outline: none;
+    border-radius: 50px;
+    height: 40px;
+    width: 80px;
+    color: #27a9e1;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 10px;
+}
+.sign_up_btn{
+    background-color: #27a9e1;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    height: 40px;
+    width: 80px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 10px;
+}

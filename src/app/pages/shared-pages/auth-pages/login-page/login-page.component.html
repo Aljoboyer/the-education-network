@@ -1,0 +1,33 @@
+<section class="auth_section">
+    <div class="auth_header">
+        <h1 class="text_heading">Learn Without Limits</h1>
+        <p class="p_area">Start, switch, or advance your career with more than 5,000 courses, Professional Certificates, <br> and degrees from world-class universities and companies.</p>
+    </div>
+    <div class="auth_div">
+        <div class="auth_form">
+            <h1 class="auth_heading">Login</h1>
+ 
+            <div class="field_div mt-3 w-100">
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter Your Email</mat-label>
+                    <input [(ngModel)]="email2" name="email2" matInput placeholder="pat@example.com" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="field_div mt-3 w-100">
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input [(ngModel)]="password" name="password" matInput [type]="hide ? 'password' : 'text'">
+                    <button class="icon_btn" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+            </div>
+            <button (click)="LoginHandler()" class="sign_up_btn">Login</button>
+        </div>
+        <div class="auth_text">
+            <img class="auth_img" src="../../../../../assets/authimg.png" />
+        </div>
+    </div>
+</section>
