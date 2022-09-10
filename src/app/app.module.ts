@@ -12,6 +12,12 @@ import { MainHomeComponent } from './pages/shared-pages/main-home/main-home.comp
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminDashboardComponent } from './pages/admin-panel/admin-dashboard/admin-dashboard.component';
+import { CreateCourseComponent } from './pages/admin-panel/create-course/create-course.component';
+import { AdminHomeComponent } from './pages/admin-panel/admin-home/admin-home.component';
+import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule} from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeadersComponent,
     LoginPageComponent,
     SignUpPageComponent,
-    MainHomeComponent
+    MainHomeComponent,
+    AdminDashboardComponent,
+    CreateCourseComponent,
+    AdminHomeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -29,7 +39,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    HttpClientModule,
+    AngularEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

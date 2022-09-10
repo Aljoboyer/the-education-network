@@ -1,0 +1,36 @@
+
+
+// -------------Picture file input style-------//
+.img_input_label{
+    display: block;
+}
+.custom-file-input {
+    color: transparent;
+  }
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: url('../../../../assets/camera-30.png');
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid rgba(24, 86, 255, 0.623);
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+  }
+  .custom-file-input:hover::before {
+    border-color: rgba(24, 86, 255, 0.623);
+  }
+  .custom-file-input:active {
+    outline: 0;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  }
+  

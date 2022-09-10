@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+}
+
+@mixin FlexResponsive($device, $d, $fd, $jc, $ai, $wrap: 'flex-wrap') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+}
+
+@mixin PaddingResponsive($device, $pt, $pr, $pb, $pl) {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+}
+
+
+.dashboard_container{
+    @include FlexResponsive('large', flex, row, space-between, flex-start)
+}
+.content_container{
+  height: 100vh;
+  width: 85%;
+}
+.sidebar{
+    height: 100vh;
+    width: 15%;
+    background-color: #0167cb;
+    li{
+        color: white;
+        list-style: none;
+        width: 110px;
+        background-color: rgba(85, 168, 250, 0.397);
+        margin-top: 15px;
+        padding: 3px 0px 3px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(28, 48, 68, 0.397);
+        }
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        
+    }
+}

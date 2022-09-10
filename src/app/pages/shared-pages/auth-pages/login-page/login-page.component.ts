@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { AuthServiceService } from 'src/app/services/auth-service/auth-service.service';
 
 @Component({
   selector: 'app-login-page',
@@ -20,7 +21,7 @@ export class LoginPageComponent implements OnInit {
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-  constructor() { }
+  constructor(private AuthServices: AuthServiceService) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +31,7 @@ export class LoginPageComponent implements OnInit {
       password: this.password,
       email: this.email2
     })
+    this.AuthServices.LoginHandler(this.email2, this.password)
   }
 
 }

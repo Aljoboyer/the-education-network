@@ -32,13 +32,6 @@ export class SignUpPageComponent implements OnInit {
   }
 
   SignUpSubmit(){
-    console.log('Signup Data', {
-      name: this.name,
-      password: this.password,
-      password2: this.password2,
-      phone: this.phone,
-      email: this.email2
-    })
 
     this.AuthHandler.RegisterHandler(this.email2, this.password, this.name,)
 

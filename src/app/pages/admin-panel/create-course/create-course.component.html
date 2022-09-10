@@ -1,0 +1,60 @@
+<div class="create_course_container">
+    <h1>Create Course</h1>
+    <div class="create_course_form_div">
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Course Title</mat-label>
+                <input matInput placeholder="Course Title">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Course Price</mat-label>
+                <span matPrefix>$ &nbsp;</span>
+                <input type="tel" matInput placeholder="Course Price">
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Course Category</mat-label>
+                <mat-select>
+                  <mat-option>Select Category</mat-option>
+                  <!-- <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option> -->
+                  <mat-option>Category</mat-option>
+                  <mat-option>Category</mat-option>
+                  <mat-option>Category</mat-option>
+                  <mat-option>Category</mat-option>
+                  <mat-option>Category</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div>
+            <label class="img_input_label">Upload Course Image</label>
+            <input type="file" class="custom-file-input">
+        </div>
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Course Chapter Description</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Chapter Title</mat-label>
+                    <input matInput placeholder="Course Title">
+                </mat-form-field>
+            </div>
+            <div>
+                <label class="img_input_label">Upload Chapter Video</label>
+                <input type="file" class="custom-file-input">
+            </div>
+            <button (click)="FieldIncreaseHandler()">Increse File</button>
+        </div>
+        <angular-editor placeholder="'Enter text here...'" [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+        <!-- <div [innerHTML]="htmlContent">
+
+        </div> -->
+    </div>
+</div>
