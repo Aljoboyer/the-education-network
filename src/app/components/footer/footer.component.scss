@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Oswald:wght@300&display=swap');
+
 
 @mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
     @if ($device == 'small') {
         @media only screen and (min-width:200px) and (max-width:567px) {
             font-size:  $fs;
+            font-family: 'Inter', sans-serif;
             font-family: 'Oswald', sans-serif;
             font-weight: $fw;
             color: $tc;
@@ -12,6 +14,7 @@
     @if ($device == 'medium') {
         @media only screen and (min-width:568px) and (max-width: 991px) {
             font-size:  $fs;
+            font-family: 'Inter', sans-serif;
             font-family: 'Oswald', sans-serif;
             font-weight: $fw;
             color: $tc;
@@ -20,6 +23,7 @@
     @if ($device == 'large') {
         @media only screen and (min-width: 992px) and (max-width: 3000px) {
             font-size:  $fs;
+            font-family: 'Inter', sans-serif;
             font-family: 'Oswald', sans-serif;
             font-weight: $fw;
             color: $tc;
@@ -75,49 +79,70 @@
     }
 }
 
-.dashboard_title{
-    @include TextResponsive('large',38px, bold, white);
-    @include TextResponsive('small', 22px, bold, white);
-    @include TextResponsive('medium', 30px, bold, white);
+@mixin GridResponsive($device: 'large', $display, $gtc) {
+    @if ($device == 'small') {
+      @media only screen and (min-width:200px) and (max-width:567px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 20px;
+      }
   }
-  .main_title{
-    @include TextResponsive('large',18px, bold, white);
-    @include TextResponsive('small', 16px, bold, white);
-    @include TextResponsive('medium', 20px, bold, white);
+  @if ($device == 'medium') {
+      @media only screen and (min-width:568px) and (max-width: 991px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 20px;
+      }
   }
-.dashboard_container{
-    @include FlexResponsive('large', flex, row, space-between, flex-start);
+  @if ($device == 'large') {
+      @media only screen and (min-width: 992px) and (max-width: 3000px) {
+          display: $display;
+          grid-template-columns: repeat($gtc , 1fr);
+          column-gap: 20px;
+      }
+  }
+  }
 
-}
-.content_container{
-
-  width: 85%;
-
-}
-.sidebar{
-    position: sticky;
-    padding-top: 20px;
-    top: 0%;
-    width: 15%;
-    height: 100vh;
-    background-color: #0167cb;
-    z-index: 1;
-    li{
-        color: white;
+.footer_section{
+    background-color: #0b2149;
+    padding: 30px 0px 30px 0px;
+    .footer_div{
+        @include GridResponsive('large', grid, 4);
+        @include GridResponsive('medium', grid, 2);
+        @include GridResponsive('small', grid, 1);
+    }
+    .heading_text{
+        @include TextResponsive('large',20px, 400, #7391ba);
+        @include TextResponsive('small', 17px, 400, #7391ba);
+        @include TextResponsive('medium', 15px, 400, #7391ba);
+    }
+    .footer_list{
         list-style: none;
-        width: 110px;
-        background-color: rgba(85, 168, 250, 0.397);
-        margin-top: 15px;
-        padding: 3px 0px 3px 10px;
-        border-radius: 5px;
+        @include TextResponsive('large', 11px, 200, white);
+        @include TextResponsive('small', 10px, 200, white);
+        @include TextResponsive('medium', 8px, 200, white);
         cursor: pointer;
         &:hover{
-            background-color: rgba(28, 48, 68, 0.397);
+            text-decoration: underline
         }
     }
-    a{
-        color: white;
-        text-decoration: none;
-        
+    .below_footer_row{
+        @include FlexResponsive('large', flex, row, space-between, center, nowrap);
+        @include FlexResponsive('medium', flex, row, space-between, center);
+        @include FlexResponsive('small', flex, column, flex-start, center);
+        padding: 0px 50px 0px 30px;
     }
+    .lowar_footer_text{
+        @include TextResponsive('large', 11px, 200, white);
+        @include TextResponsive('small', 10px, 200, white);
+        @include TextResponsive('medium', 8px, 200, white);
+    }
+    .img_icon{
+        cursor: pointer;
+    }
+}
+
+.hr_line{
+    height: 10px;
+    color: white;
 }

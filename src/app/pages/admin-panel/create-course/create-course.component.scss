@@ -1,8 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+  @if ($device == 'small') {
+      @media only screen and (min-width:200px) and (max-width:567px) {
+          font-size:  $fs;
+          font-family: 'Oswald', sans-serif;
+          font-weight: $fw;
+          color: $tc;
+      }
+  }
+  @if ($device == 'medium') {
+      @media only screen and (min-width:568px) and (max-width: 991px) {
+          font-size:  $fs;
+          font-family: 'Oswald', sans-serif;
+          font-weight: $fw;
+          color: $tc;
+      }
+  }
+  @if ($device == 'large') {
+      @media only screen and (min-width: 992px) and (max-width: 3000px) {
+          font-size:  $fs;
+          font-family: 'Oswald', sans-serif;
+          font-weight: $fw;
+          color: $tc;
+      }
+  }
+}
+
+@mixin GridResponsive($device: 'large', $display, $gtc) {
+  @if ($device == 'small') {
+    @media only screen and (min-width:200px) and (max-width:567px) {
+        display: $display;
+        grid-template-columns: repeat(1fr $gtc);
+        column-gap: 20px;
+    }
+}
+@if ($device == 'medium') {
+    @media only screen and (min-width:568px) and (max-width: 991px) {
+        display: $display;
+        grid-template-columns: repeat(1fr $gtc);
+        column-gap: 20px;
+    }
+}
+@if ($device == 'large') {
+    @media only screen and (min-width: 992px) and (max-width: 3000px) {
+        display: $display;
+        grid-template-columns: repeat($gtc , 1fr);
+        column-gap: 20px;
+    }
+}
+}
+@mixin PaddingResponsive($device, $pt, $pr, $pb, $pl) {
+  @if ($device == 'small') {
+      @media only screen and (min-width:200px) and (max-width:567px) {
+          padding: $pt $pr $pb $pl;
+      }
+  }
+  @if ($device == 'medium') {
+      @media only screen and (min-width:568px) and (max-width: 991px) {
+          padding: $pt $pr $pb $pl;
+      }
+  }
+  @if ($device == 'large') {
+      @media only screen and (min-width: 992px) and (max-width: 3000px) {
+          padding: $pt $pr $pb $pl;
+      }
+  }
+}
+
+.create_course_form_div{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  width: 90%;
+  padding: 30px
+}
+.field_Container{
+  @include GridResponsive('large', grid, 2);
+  @include GridResponsive('medium', grid, 2);
+  @include GridResponsive('small', grid, 1);
+  @include PaddingResponsive('large', 0px, 0px , 0px, 0px);
+  @include PaddingResponsive('medium', 0px, 0px , 0px, 0px);
+  @include PaddingResponsive('small', 0px, 0px , 0px, 0px);
+}
 
 
+.title{
+  @include TextResponsive('large',38px, bold, #0056d2);
+  @include TextResponsive('small', 22px, bold, #0056d2);
+  @include TextResponsive('medium', 30px, bold, #0056d2);
+  text-align: center;
+}
+.mat-form-field {
+  width: 100%;
+}
+.Text_editor_contaienr{
+  padding: 20px 30px 0px 30px;
+}
 // -------------Picture file input style-------//
 .img_input_label{
     display: block;
+    color: #395987;
+    font-size: 12px;
+    font-weight: bold;
+}
+.video_field_div{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.increase_div{
+  cursor: pointer;
+  border: #395987 solid 1px;
+  margin-left: 15px;
 }
 .custom-file-input {
     color: transparent;
@@ -31,6 +140,42 @@
     outline: 0;
   }
   .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  }
+  
+  .form_label{
+    color: #395987;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .custom-video-input {
+    color: transparent;
+  }
+  .custom-video-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-video-input::before {
+    content: url('../../../../assets/video-30.png');
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid rgba(24, 86, 255, 0.623);
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+  }
+  .custom-video-input:hover::before {
+    border-color: rgba(24, 86, 255, 0.623);
+  }
+  .custom-video-input:active {
+    outline: 0;
+  }
+  .custom-video-input:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
   }
   

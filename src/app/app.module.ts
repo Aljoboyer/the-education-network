@@ -18,6 +18,8 @@ import { AdminHomeComponent } from './pages/admin-panel/admin-home/admin-home.co
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule} from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProvenResultSectionComponent } from './pages/shared-pages/main-home/proven-result-section/proven-result-section.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     AdminDashboardComponent,
     CreateCourseComponent,
     AdminHomeComponent,
+    FooterComponent,
+    ProvenResultSectionComponent,
 
   ],
   imports: [

@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Oswald:wght@300&display=swap');
+
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+}
+
+@mixin FlexResponsive($device, $d, $fd, $jc, $ai, $wrap: 'flex-wrap') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+}
+
+@mixin PaddingResponsive($device, $pt, $pr, $pb, $pl) {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+}
+
+@mixin GridResponsive($device: 'large', $display, $gtc) {
+    @if ($device == 'small') {
+      @media only screen and (min-width:200px) and (max-width:567px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 30px;
+      }
+  }
+  @if ($device == 'medium') {
+      @media only screen and (min-width:568px) and (max-width: 991px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 30px;
+      }
+  }
+  @if ($device == 'large') {
+      @media only screen and (min-width: 992px) and (max-width: 3000px) {
+          display: $display;
+          grid-template-columns: repeat($gtc , 1fr);
+          column-gap: 30px;
+      }
+  }
+  }
+
+.proven_result_div{
+    @include GridResponsive('large', grid, 3);
+    @include GridResponsive('medium', grid, 2);
+    @include GridResponsive('small', grid, 1);
+    padding: 70px 0px 70px 0px;
+    .heading{
+        @include TextResponsive('large',20px, 400, black);
+        @include TextResponsive('small', 17px, 400, black);
+        @include TextResponsive('medium', 15px, 400, black);
+        padding: 40px 0px 0px 0px;
+    }
+    .title{
+        @include TextResponsive('large', 16px, 400, black);
+        @include TextResponsive('small', 13px, 400, black);
+        @include TextResponsive('medium', 11px, 400, black);
+    }
+    .proven_column1{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        &:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        border-top-right-radius: 50px;
+        padding: 80px 30px 80px 30px;
+        cursor: pointer;
+    }
+    .proven_column2{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        &:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        border-bottom-right-radius: 50px;
+        padding: 80px 30px 80px 30px;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       justify-content: space-between;
+       cursor: pointer;
+    }
+    .proven_column3{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        &:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        border-top-left-radius: 50px;
+        padding: 80px 30px 80px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="35px" viewBox="0 0 37 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-enterprise</title>
+    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-Refresh-Design-1" transform="translate(-166.000000, -881.000000)">
+            <g id="Our-proven-results" transform="translate(130.000000, 740.000000)">
+                <g id="For-enterprise" transform="translate(0.000000, 98.000000)">
+                    <g id="icon-enterprise" transform="translate(37.000000, 43.000000)">
+                        <path d="M35,35 L17.5,35 L17.5,17.5 L32.652,17.5 C33.949,17.5 35,18.551 35,19.848 L35,35 Z" id="Fill-1" fill="#3D7AFF"></path>
+                        <path d="M15.4,0 L0,0 L0,35 L6.027,35 L6.027,28.949 L11.473,28.949 L11.473,35 L17.5,35 L17.5,2.625 C17.5,1.175 16.56,0 15.4,0" id="Fill-3" fill="#BDEA09"></path>
+                        <line x1="0.0001" y1="29.1666" x2="35.0001" y2="29.1666" id="Stroke-5" stroke="#0B0B0B" stroke-linecap="round"></line>
+                        <line x1="0.0001" y1="23.3333" x2="35.0001" y2="23.3333" id="Stroke-7" stroke="#0B0B0B" stroke-linecap="round"></line>
+                        <line x1="0.0001" y1="17.5" x2="17.5001" y2="17.5" id="Stroke-9" stroke="#0B0B0B" stroke-linecap="round"></line>
+                        <line x1="0.0001" y1="11.6666" x2="17.5001" y2="11.6666" id="Stroke-11" stroke="#0B0B0B" stroke-linecap="round"></line>
+                        <line x1="0.0001" y1="5.8333" x2="17.5001" y2="5.8333" id="Stroke-13" stroke="#0B0B0B" stroke-linecap="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
