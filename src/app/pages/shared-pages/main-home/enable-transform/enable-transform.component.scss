@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Oswald:wght@300&display=swap');
+
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+}
+
+@mixin GridResponsive($device: 'large', $display, $gtc) {
+    @if ($device == 'small') {
+      @media only screen and (min-width:200px) and (max-width:567px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 20px;
+      }
+  }
+  @if ($device == 'medium') {
+      @media only screen and (min-width:568px) and (max-width: 991px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 20px;
+      }
+  }
+  @if ($device == 'large') {
+      @media only screen and (min-width: 992px) and (max-width: 3000px) {
+          display: $display;
+          grid-template-columns: repeat($gtc , 1fr);
+          column-gap: 20px;
+      }
+  }
+  }
+
+.transform_div{
+    @include GridResponsive('large', grid, 2);
+    @include GridResponsive('medium', grid, 2);
+    @include GridResponsive('small', grid, 1);
+
+    .main_title{
+        @include TextResponsive('large',38px, bold, #0056d2);
+        @include TextResponsive('small', 25px, bold, #0056d2);
+        @include TextResponsive('medium', 20px, bold, #0056d2);
+    }
+    .heading{
+        @include TextResponsive('large', 22px, 400, #0056d2);
+        @include TextResponsive('small', 16px, 400, #0056d2);
+        @include TextResponsive('medium', 18px, 400, #0056d2);
+    }
+    .transform_text{
+        @include TextResponsive('large', 16px, 200,);
+        @include TextResponsive('small', 12px, 200,);
+        @include TextResponsive('medium', 14px, 200,);
+    }
+
+    .brain_img{
+        height: 100%;
+        width: 100%;
+    }
+}

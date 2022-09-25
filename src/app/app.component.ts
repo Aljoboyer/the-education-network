@@ -1,5 +1,5 @@
-import { Component, DoCheck } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { Router,  NavigationEnd  } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
   
 })
-export class AppComponent implements DoCheck  {
+export class AppComponent implements DoCheck , OnInit {
   title = 'the-education-network';
-  isVisible = true
+  isVisible = true;
+
   constructor(private router: Router){
 
   }
@@ -22,5 +23,15 @@ export class AppComponent implements DoCheck  {
     else{
       this.isVisible = true
     }
+    
   }
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
+  }
+ 
 }

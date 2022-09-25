@@ -107,17 +107,17 @@
     @include GridResponsive('large', grid, 3);
     @include GridResponsive('medium', grid, 2);
     @include GridResponsive('small', grid, 1);
-    padding: 70px 0px 70px 0px;
+    padding: 20px 0px 70px 0px;
     .heading{
         @include TextResponsive('large',20px, 400, black);
-        @include TextResponsive('small', 17px, 400, black);
-        @include TextResponsive('medium', 15px, 400, black);
+        @include TextResponsive('small', 15px, 400, black);
+        @include TextResponsive('medium', 17px, 400, black);
         padding: 40px 0px 0px 0px;
     }
     .title{
         @include TextResponsive('large', 16px, 400, black);
-        @include TextResponsive('small', 13px, 400, black);
-        @include TextResponsive('medium', 11px, 400, black);
+        @include TextResponsive('small', 11px, 400, black);
+        @include TextResponsive('medium', 13px, 400, black);
     }
     .proven_column1{
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -154,4 +154,12 @@
         justify-content: space-between;
         cursor: pointer;
     }
+
+}
+.main_heading{
+    @include TextResponsive('large', 38px, 400, black);
+    @include TextResponsive('small', 18px, 400, black);
+    @include TextResponsive('medium', 25px, 400, black);
+    margin-left: 120px;
+    padding-top: 50px;
 }

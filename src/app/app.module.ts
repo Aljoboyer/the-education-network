@@ -20,6 +20,9 @@ import { HttpClientModule} from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProvenResultSectionComponent } from './pages/shared-pages/main-home/proven-result-section/proven-result-section.component';
+import { GetInTouchComponent } from './pages/shared-pages/main-home/get-in-touch/get-in-touch.component';
+import { EnableTransformComponent } from './pages/shared-pages/main-home/enable-transform/enable-transform.component';
+import { EverythingYouNeedComponent } from './pages/shared-pages/main-home/everything-you-need/everything-you-need.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { ProvenResultSectionComponent } from './pages/shared-pages/main-home/pro
     AdminHomeComponent,
     FooterComponent,
     ProvenResultSectionComponent,
+    GetInTouchComponent,
+    EnableTransformComponent,
+    EverythingYouNeedComponent,
 
   ],
   imports: [

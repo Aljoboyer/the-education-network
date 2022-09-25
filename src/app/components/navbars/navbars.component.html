@@ -16,9 +16,12 @@
             <a class="nav-link" routerLink="Admin-dashboard" >Dashboard</a>
           </li>
         </ul>
-        <div class="d-flex">
+        <div *ngIf="!user.email" class="d-flex">
           <button routerLink="login" class="login_btn">Login</button>
           <button routerLink="sign-up" class="sign_up_btn">Sign-up</button>
+        </div>
+        <div *ngIf="user.email" class="d-flex">
+          <button (click)="LogoutHandler()" class="logOut">Logout</button>
         </div>
       </div>
     </div>

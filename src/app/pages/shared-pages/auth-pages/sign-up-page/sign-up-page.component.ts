@@ -33,7 +33,7 @@ export class SignUpPageComponent implements OnInit {
 
   SignUpSubmit(){
 
-    this.AuthHandler.RegisterHandler(this.email2, this.password, this.name,)
+    this.AuthHandler.RegisterHandler(this.email2, this.password, this.name, this.phone)
 
   }
 }

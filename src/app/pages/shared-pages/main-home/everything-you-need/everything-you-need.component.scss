@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Oswald:wght@300&display=swap');
+
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+}
+
+@mixin PaddingResponsive($device, $pt, $pr, $pb, $pl) {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+}
+
+@mixin GridResponsive($device: 'large', $display, $gtc) {
+    @if ($device == 'small') {
+      @media only screen and (min-width:200px) and (max-width:567px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 30px;
+      }
+  }
+  @if ($device == 'medium') {
+      @media only screen and (min-width:568px) and (max-width: 991px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 30px;
+      }
+  }
+  @if ($device == 'large') {
+      @media only screen and (min-width: 992px) and (max-width: 3000px) {
+          display: $display;
+          grid-template-columns: repeat($gtc , 1fr);
+          column-gap: 30px;
+      }
+  }
+  }
+
+
+.everything_div{
+    @include GridResponsive('large', grid, 2);
+    @include GridResponsive('medium', grid, 2);
+    @include GridResponsive('small', grid, 1);
+
+    .heading{
+        @include TextResponsive('large', 17px, 500, #555);
+        @include TextResponsive('small', 12px, 500, #555);
+        @include TextResponsive('medium', 14px, 500, #555);
+        padding-bottom: 0px;
+        margin-bottom: 0px
+    }
+    .text{
+        @include TextResponsive('large',14px, 200, #555);
+        @include TextResponsive('small', 10px, 200, #555);
+        @include TextResponsive('medium', 12px, 200, #555);
+    }
+
+}
+.icons{
+    color: #27a9e1;
+    height: auto;
+}
+.main_heading{
+    @include TextResponsive('large', 30px, bold, #555);
+    @include TextResponsive('small', 16px, bold, #555);
+    @include TextResponsive('medium', 20px, bold, #555);
+    text-align: center;
+}
+.everything_section{
+    padding: 0px 0px 50px 0px;
+}

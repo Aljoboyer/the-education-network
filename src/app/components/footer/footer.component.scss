@@ -106,6 +106,7 @@
 .footer_section{
     background-color: #0b2149;
     padding: 30px 0px 30px 0px;
+    
     .footer_div{
         @include GridResponsive('large', grid, 4);
         @include GridResponsive('medium', grid, 2);
