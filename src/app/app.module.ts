@@ -23,6 +23,8 @@ import { ProvenResultSectionComponent } from './pages/shared-pages/main-home/pro
 import { GetInTouchComponent } from './pages/shared-pages/main-home/get-in-touch/get-in-touch.component';
 import { EnableTransformComponent } from './pages/shared-pages/main-home/enable-transform/enable-transform.component';
 import { EverythingYouNeedComponent } from './pages/shared-pages/main-home/everything-you-need/everything-you-need.component';
+import { EmployeeViewComponent } from './pages/mysql-practice/employee-view/employee-view.component';
+import { EmployeeCrateComponent } from './pages/mysql-practice/employee-crate/employee-crate.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { EverythingYouNeedComponent } from './pages/shared-pages/main-home/every
     GetInTouchComponent,
     EnableTransformComponent,
     EverythingYouNeedComponent,
+    EmployeeViewComponent,
+    EmployeeCrateComponent,
 
   ],
   imports: [

@@ -1,0 +1,14 @@
+<div>
+    <h1 class="text-center">Employee Here </h1>
+    <div class="d-flex flex-row justify-content-evenly" *ngIf="emplyeeArr.length > 0">
+        <div  *ngFor="let employe of emplyeeArr">
+            <h3>Name: {{employe.Name}}</h3>
+            <h4>Position: {{employe.Position}}</h4>
+            <h4>Salary: {{employe.Salary}}</h4>
+            <h5>City:{{employe.City}}</h5>
+        </div>
+    </div>
+    <div  *ngIf="emplyeeArr.length == 0">
+        <h1>Loading...</h1>
+    </div>
+</div>

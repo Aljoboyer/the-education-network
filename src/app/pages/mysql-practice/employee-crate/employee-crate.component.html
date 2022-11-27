@@ -1,0 +1,40 @@
+<div>
+    <h1 class="fw-bold fs-1 text-primary text-center my-4">Create Employee</h1>
+    <div class="field_div my-2 ms-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label class="form_label">ID</mat-label>
+            <input  name='id' (change)="OnEmployeChangeHandler( $event)" matInput placeholder="Employee ID">
+        </mat-form-field> 
+    </div>
+    <div class="field_div my-2 ms-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label class="form_label">Name</mat-label>
+            <input  name='Name' (change)="OnEmployeChangeHandler( $event)" matInput placeholder="Employee Name">
+        </mat-form-field> 
+    </div>
+    <div class="field_div my-2 ms-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label class="form_label">Position</mat-label>
+            <input  name='Position' (change)="OnEmployeChangeHandler( $event)" matInput placeholder="Employee Position">
+        </mat-form-field> 
+    </div>
+    <div class="field_div my-2 ms-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label class="form_label">Salary</mat-label>
+            <input  name='Salary' (change)="OnEmployeChangeHandler( $event)" matInput placeholder="Employee Salary">
+        </mat-form-field> 
+    </div>
+    <div class="field_div my-2 ms-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label class="form_label">City</mat-label>
+            <input  name='City' (change)="OnEmployeChangeHandler( $event)" matInput placeholder="Employee City">
+        </mat-form-field> 
+    </div>
+    <div class="field_div my-2 ms-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label class="form_label">Country</mat-label>
+            <input  name='Country' (change)="OnEmployeChangeHandler( $event)" matInput placeholder="Employee Country">
+        </mat-form-field> 
+    </div>
+    <button (click)="EmployeeAddHandler()" class="btn btn-primary fw-bold ms-4">Add</button>
+</div>
