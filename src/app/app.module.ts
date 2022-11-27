@@ -25,6 +25,8 @@ import { EnableTransformComponent } from './pages/shared-pages/main-home/enable-
 import { EverythingYouNeedComponent } from './pages/shared-pages/main-home/everything-you-need/everything-you-need.component';
 import { EmployeeViewComponent } from './pages/mysql-practice/employee-view/employee-view.component';
 import { EmployeeCrateComponent } from './pages/mysql-practice/employee-crate/employee-crate.component';
+import { UpdateModalComponent } from './pages/mysql-practice/update-modal/update-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { EmployeeCrateComponent } from './pages/mysql-practice/employee-crate/em
     EverythingYouNeedComponent,
     EmployeeViewComponent,
     EmployeeCrateComponent,
+    UpdateModalComponent,
 
   ],
   imports: [
@@ -56,7 +59,8 @@ import { EmployeeCrateComponent } from './pages/mysql-practice/employee-crate/em
     FormsModule,
     MatSelectModule,
     HttpClientModule,
-    AngularEditorModule
+    AngularEditorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

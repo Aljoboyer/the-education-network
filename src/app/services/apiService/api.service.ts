@@ -13,6 +13,6 @@ export class ApiService {
   constructor() { }
 
   USER_API: any =  `${this.api}/user`
-  GET_EMPLOYEE: any =  `${this.api}/practice/employee`
+  EMPLOYEE: any =  `${this.api}/practice/employee`
 
 }
