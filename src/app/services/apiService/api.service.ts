@@ -14,5 +14,5 @@ export class ApiService {
 
   USER_API: any =  `${this.api}/user`
   EMPLOYEE: any =  `${this.api}/practice/employee`
-
+  CATEGORY: any =  `${this.api}/practice/category`
 }

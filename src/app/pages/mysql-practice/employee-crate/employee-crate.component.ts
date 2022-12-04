@@ -26,7 +26,10 @@ export class EmployeeCrateComponent implements OnInit {
   EmployeeAddHandler(){
     console.log('this.employeObj', this.employeObj)
     this.http.post(this.API.EMPLOYEE, this.employeObj, {'headers': this.API.headers}).subscribe((datas: any) => {
-      console.log('datas',)
+      console.log(datas)
+      if(datas?.error){
+        alert(`${datas?.error}`)
+      }
     })
   }
 }

@@ -1,6 +1,12 @@
 <div>
+    <label for="cars">Choose a Position:</label>
+        <select name="cars" id="cars">
+            <option *ngFor="let posi of positions" value="volvo">{{posi?.Position}}</option>
+        </select>
+
+
     <h1 class="text-center">Employee Here </h1>
-    <div class="d-flex flex-row justify-content-evenly" *ngIf="emplyeeArr.length > 0">
+    <div class="d-flex flex-row justify-content-evenly flex-wrap" *ngIf="emplyeeArr.length > 0">
         <div  *ngFor="let employe of emplyeeArr">
             <h3>Name: {{employe.Name}}</h3>
             <h4>Position: {{employe.Position}}</h4>
