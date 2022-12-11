@@ -37,4 +37,17 @@
         </mat-form-field> 
     </div>
     <button (click)="EmployeeAddHandler()" class="btn btn-primary fw-bold ms-4">Add</button>
+
+    <div class="mt-4">
+        <div class="field_div my-2 ms-4">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label class="form_label">Dog Name</mat-label>
+                <input  name='dogname' (change)="OnDogNameHandler($event)" matInput placeholder="Dog Name">
+            </mat-form-field> 
+        </div>
+        <label class="img_input_label my-2">Upload Dog Image</label>
+        <input (change)="OnimgChangeHandler($event)" name="img" type="file" class="custom-file-input">
+
+        <button (click)="Upload()" class="btn btn-primary fw-bold ms-4">Add</button>
+    </div>
 </div>

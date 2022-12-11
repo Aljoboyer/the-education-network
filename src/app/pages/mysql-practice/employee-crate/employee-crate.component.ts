@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EmployeeCrateComponent implements OnInit {
   employeObj: any = {}
+  dogname: any = ''
+  img: any = ''
   constructor(private API: ApiService, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -24,12 +26,29 @@ export class EmployeeCrateComponent implements OnInit {
     this.employeObj = newdata
   }
   EmployeeAddHandler(){
-    console.log('this.employeObj', this.employeObj)
+
     this.http.post(this.API.EMPLOYEE, this.employeObj, {'headers': this.API.headers}).subscribe((datas: any) => {
-      console.log(datas)
+
       if(datas?.error){
         alert(`${datas?.error}`)
       }
+    })
+  } 
+
+  OnDogNameHandler(e: any){
+    this.dogname = e.target.value; 
+  }
+  OnimgChangeHandler(e: any){
+    this.img = e.target.files[0];
+  }
+  Upload(){
+    const fd = new FormData()
+
+    fd.append('dogname', this.dogname)
+    fd.append('img', this.img)
+
+    this.http.post(this.API.UPLOAD, fd).subscribe((datas: any) => {
+      console.log('upload f >>>>>', datas)
     })
   }
 }

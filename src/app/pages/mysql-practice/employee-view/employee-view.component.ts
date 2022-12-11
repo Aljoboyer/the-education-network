@@ -12,6 +12,8 @@ import { UpdateModalComponent } from '../update-modal/update-modal.component';
 export class EmployeeViewComponent implements OnInit {
   emplyeeArr: any = []
   positions: any = []
+  images: any = []
+  twoTableData: any = []
 
   constructor(private http: HttpClient, private API: ApiService, public dialog: MatDialog) {}
 
@@ -25,9 +27,19 @@ export class EmployeeViewComponent implements OnInit {
       console.log('datas',datas)
       this.positions = [...datas]
     })
+
+    this.http.get(this.API.GETIMAGES).subscribe((datas: any) => {
+      console.log('images >>>>>',datas)
+      this.images = [...datas]
+    })
+    this.http.get(this.API.GET_TWO_TABLE_DATA).subscribe((datas: any) => {
+      console.log('twoTableData >>>>>',datas)
+      this.twoTableData = [...datas]
+    })
   }
+  
   DeleteHandler(id: any){
-    console.log(id)
+
     this.http.delete(`${this.API.EMPLOYEE}/${id}`).subscribe((datas: any) => {
 
       this.ngOnInit()
