@@ -19,10 +19,16 @@ export class EmployeeViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.API.EMPLOYEE).subscribe((datas: any) => {
-
+      console.log('employee ===>', datas)
       this.emplyeeArr = [...datas]
     })
 
+    this.http.get(this.API.GET_OUTTER_JOIN_DATA).subscribe((datas: any) => {
+      console.log('GET_OUTTER_JOIN_DATA ===>', datas)
+      this.emplyeeArr = [...datas]
+    })
+
+    
     this.http.get(this.API.CATEGORY).subscribe((datas: any) => {
       console.log('datas',datas)
       this.positions = [...datas]

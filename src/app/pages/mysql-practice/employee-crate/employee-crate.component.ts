@@ -28,7 +28,7 @@ export class EmployeeCrateComponent implements OnInit {
   EmployeeAddHandler(){
 
     this.http.post(this.API.EMPLOYEE, this.employeObj, {'headers': this.API.headers}).subscribe((datas: any) => {
-
+      console.log('Post data', datas)
       if(datas?.error){
         alert(`${datas?.error}`)
       }
@@ -48,6 +48,19 @@ export class EmployeeCrateComponent implements OnInit {
     fd.append('img', this.img)
 
     this.http.post(this.API.UPLOAD, fd).subscribe((datas: any) => {
+      console.log('upload f >>>>>', datas)
+    })
+  }
+  MultipleItemAdd(){
+    const ItemArr = [
+      {Subject: 'Bangla', MidTerm: 15, CT: 8, Final: 66},
+      {Subject: 'English', MidTerm: 16, CT: 4, Final: 44},
+      {Subject: 'Science', MidTerm: 15, CT: 7, Final: 99},
+      {Subject: 'Math', MidTerm: 12, CT: 8, Final: 78},
+      {Subject: 'Global Studies', MidTerm: 13, CT: 5, Final: 54},
+      {Subject: 'Relegion', MidTerm: 11, CT: 9, Final: 88},
+    ]
+    this.http.post(this.API.ADD_MULTIPLE_VALUE, ItemArr,  {'headers': this.API.headers}).subscribe((datas: any) => {
       console.log('upload f >>>>>', datas)
     })
   }

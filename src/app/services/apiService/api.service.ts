@@ -18,5 +18,6 @@ export class ApiService {
   UPLOAD: any =  `${this.api}/practice/upload`
   GETIMAGES: any =  `${this.api}/practice/GetImages`
   GET_TWO_TABLE_DATA: any =  `${this.api}/practice/GetTwoTableData`
-  
+  GET_OUTTER_JOIN_DATA: any =  `${this.api}/practice/OutterJoindata`
+  ADD_MULTIPLE_VALUE: any =  `${this.api}/practice/AddMultpledata`
 }
